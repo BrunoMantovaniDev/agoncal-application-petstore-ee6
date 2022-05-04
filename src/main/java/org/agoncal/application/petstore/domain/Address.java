@@ -13,8 +13,7 @@ import lombok.ToString;
  *         http://www.antoniogoncalves.org
  *         --
  */
-@Getter
-@Setter
+
 @ToString
 @Embeddable
 public class Address {
@@ -26,21 +25,21 @@ public class Address {
     @Column(nullable = false)
     @NotNull
     @Size(min = 5, max = 50)
-    private String street1;
-    private String street2;
+    @Getter @Setter private String street1;
+    @Getter @Setter private String street2;
     @Column(nullable = false, length = 100)
     @NotNull
     @Size(min = 2, max = 50)
-    private String city;
-    private String state;
+    @Getter @Setter private String city;
+    @Getter @Setter private String state;
     @Column(name = "zip_code", nullable = false, length = 10)
     @NotNull
     @Size(min = 1, max = 10)
-    private String zipcode;
+    @Getter @Setter private String zipcode;
     @Column(nullable = false, length = 50)
     @NotNull
     @Size(min = 2, max = 50)
-    private String country; // TODO use an enum
+    @Getter @Setter private String country; // TODO use an enum
 
     // ======================================
     // =            Constructors            =
@@ -57,9 +56,7 @@ public class Address {
     }
 
    
-    // ======================================
-    // =         Getters & setters          =
-    // ======================================
+   
 
     
 
